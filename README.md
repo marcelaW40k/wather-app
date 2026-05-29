@@ -51,8 +51,8 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu entorno local:
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone [https://github.com/tu-usuario/skyline-weather.git](https://github.com/tu-usuario/skyline-weather.git)
-    cd skyline-weather
+    git clone [https://github.com/marcelaW40k/wather-app]
+    cd weather-app
     ```
 
 2.  **Estructura del Proyecto:** Asegúrate de mantener la jerarquía exacta de directorios:
@@ -67,10 +67,6 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu entorno local:
 3.  **Ejecuta la aplicación:**
     Debido a que la geolocalización nativa y las peticiones `Fetch` exigen seguridad perimetral en los navegadores actuales, se aconseja inicializar el entorno mediante un servidor local:
     * Si usas **VS Code**, haz clic derecho sobre `index.html` y selecciona **Open with Live Server**.
-    * Alternativamente, puedes usar Python desde tu terminal dentro del directorio del proyecto: 
-      ```bash
-      python -m http.server 8000
-      ```
 
 ---
 
