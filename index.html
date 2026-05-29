@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Weather | Minimal Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="weather-bg-default">
+    
+    <div class="app-container">
+        <header class="app-header">
+            <div class="brand">
+                <i class="fa-solid fa-cloud-sun brand-logo"></i>
+                <h1>Skyline</h1>
+            </div>
+            
+            <form id="search-form" class="search-form">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Buscar ciudad (ej. Madrid, Tokio)..." 
+                        autocomplete="off"
+                        maxlength="60"
+                    >
+                    <button type="button" id="geo-btn" class="geo-btn" title="Usar ubicación actual">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </button>
+                </div>
+            </form>
+        </header>
+
+        <section class="history-container" id="history-container">
+            </section>
+
+        <main class="main-dashboard">
+            <div id="loader" class="loader-wrapper hidden">
+                <div class="custom-loader"></div>
+            </div>
+
+            <div id="error-container" class="error-card hidden">
+                <i class="fa-solid fa-triangle-exclamation error-avatar"></i>
+                <div class="error-text">
+                    <h3 id="error-title">Ups, algo salió mal</h3>
+                    <p id="error-message">No pudimos encontrar la ciudad. Inténtalo de nuevo.</p>
+                </div>
+            </div>
+
+            <div id="weather-content" class="dashboard-grid hidden">
+                
+                <div class="card main-weather-card">
+                    <div class="location-meta">
+                        <h2 id="weather-city">Madrid</h2>
+                        <p id="weather-country">España</p>
+                        <span id="weather-date" class="date-tag">Jueves, 28 de Mayo</span>
+                    </div>
+                    
+                    <div class="weather-core">
+                        <img id="weather-icon" src="" alt="Estado del clima" class="main-icon">
+                        <div class="temp-block">
+                            <span id="weather-temp" class="main-temp">24</span><span class="temp-unit">°C</span>
+                        </div>
+                        <p id="weather-desc" class="weather-condition">Despejado</p>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="card metric-box">
+                        <div class="metric-header">
+                            <i class="fa-solid fa-temperature-half"></i>
+                            <span>Sensación Térmica</span>
+                        </div>
+                        <p class="metric-value"><span id="metric-feels">26</span>°C</p>
+                    </div>
+
+                    <div class="card metric-box">
+                        <div class="metric-header">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span>Humedad</span>
+                        </div>
+                        <p class="metric-value"><span id="metric-humidity">45</span>%</p>
+                    </div>
+
+                    <div class="card metric-box">
+                        <div class="metric-header">
+                            <i class="fa-solid fa-wind"></i>
+                            <span>Viento</span>
+                        </div>
+                        <p class="metric-value"><span id="metric-wind">12</span> <span class="unit-sub">km/h</span></p>
+                    </div>
+
+                    <div class="card metric-box">
+                        <div class="metric-header">
+                            <i class="fa-solid fa-sun"></i>
+                            <span>Índice UV</span>
+                        </div>
+                        <p class="metric-value"><span id="metric-uv">5</span></p>
+                    </div>
+                </div>
+
+                <div class="card forecast-card">
+                    <h3>Pronóstico Extendido</h3>
+                    <div class="forecast-timeline" id="forecast-timeline">
+                        </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
